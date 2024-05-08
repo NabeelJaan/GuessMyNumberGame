@@ -39,19 +39,9 @@ document.querySelector('.check').addEventListener('click', function () {
          document.querySelector('.highscore').textContent = highscore;
       }
       // Check the Number is too High
-   } else if (secretNumber > guess) {
+   } else if (guess !== secretNumber) {
       if (score > 1) {
-         document.querySelector('.message').textContent = 'Number is Low';
-         score--;
-         document.querySelector('.score').textContent = score;
-      } else {
-         document.querySelector('.message').textContent = 'You lost the game';
-         document.querySelector('.score').textContent = 0;
-      }
-      // Check the Number is too low
-   } else if (secretNumber < guess) {
-      if (score > 1) {
-         document.querySelector('.message').textContent = 'Number is High';
+         document.querySelector('.message').textContent = guess > secretNumber ? 'Number is High' : 'Number is Low';
          score--;
          document.querySelector('.score').textContent = score;
       } else {
